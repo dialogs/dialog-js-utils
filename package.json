@@ -1,0 +1,31 @@
+{
+  "name": "@dlghq/dialog-utils",
+  "version": "0.0.0",
+  "description": "A collection of utility libraries used by Dialog projects.",
+  "main": "dist/index.js",
+  "module": "dist/index.es.js",
+  "jsnext:main": "dist/index.es.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "pretest": "eslint src/ && flow check",
+    "test": "exit 0",
+    "build": "rollup -c rollup.config.js",
+    "preversion": "npm test && npm run build",
+    "postversion": "npm publish",
+    "postpublish": "git push --follow-tags"
+  },
+  "repository": "git@github.com:dialogs/dialog-js-utils.git",
+  "author": "Nikita Gusakov <gusnkt@gmail.com>",
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "@dlghq/babel-preset-dialog": "2.5.0",
+    "@dlghq/eslint-config-dialog": "1.15.0",
+    "eslint": "3.10.2",
+    "flow-bin": "0.35.0",
+    "rollup": "0.36.3",
+    "rollup-plugin-babel": "2.6.1",
+    "rollup-plugin-json": "2.0.2"
+  }
+}
