@@ -10,7 +10,7 @@
   ],
   "scripts": {
     "pretest": "eslint src/ && flow check",
-    "test": "exit 0",
+    "test": "jest",
     "build": "rollup -c rollup.config.js",
     "preversion": "npm test && npm run build",
     "postversion": "npm publish",
@@ -24,8 +24,12 @@
     "@dlghq/eslint-config-dialog": "1.15.0",
     "eslint": "3.10.2",
     "flow-bin": "0.35.0",
+    "jest-cli": "17.0.3",
     "rollup": "0.36.3",
     "rollup-plugin-babel": "2.6.1",
     "rollup-plugin-json": "2.0.2"
+  },
+  "dependencies": {
+    "immutable": "3.8.1"
   }
 }

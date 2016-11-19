@@ -3,6 +3,7 @@
 [include]
 
 [libs]
+lib/
 
 [options]
 module.system=haste

@@ -1,3 +1,9 @@
 {
-  "extends": "@dlghq/eslint-config-dialog"
+  "extends": "@dlghq/eslint-config-dialog",
+  "env": {
+    "jest": true
+  },
+  "rules": {
+    "max-len": [2, 120]
+  }
 }
