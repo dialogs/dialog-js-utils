@@ -2,17 +2,15 @@
   "name": "@dlghq/dialog-utils",
   "version": "0.2.0",
   "description": "A collection of utility libraries used by Dialog projects.",
-  "main": "dist/index.js",
-  "module": "dist/index.es.js",
-  "jsnext:main": "dist/index.es.js",
+  "main": "src/index.js",
   "files": [
-    "dist"
+    "src",
+    "lib"
   ],
   "scripts": {
     "pretest": "eslint src/ && flow check",
     "test": "jest",
-    "build": "rollup -c rollup.config.js",
-    "preversion": "npm test && npm run build",
+    "preversion": "npm test",
     "postversion": "npm publish",
     "postpublish": "git push --follow-tags"
   },
@@ -24,10 +22,7 @@
     "@dlghq/eslint-config-dialog": "1.15.0",
     "eslint": "3.10.2",
     "flow-bin": "0.35.0",
-    "jest-cli": "17.0.3",
-    "rollup": "0.36.3",
-    "rollup-plugin-babel": "2.6.1",
-    "rollup-plugin-json": "2.0.2"
+    "jest-cli": "17.0.3"
   },
   "dependencies": {
     "immutable": "3.8.1"
