@@ -12,9 +12,12 @@
     "test": "jest",
     "predocs": "rm -rf docs/",
     "docs": "esdoc -c esdoc.json",
+    "postdocs": "buildbranch gh-pages docs",
     "preversion": "npm test",
-    "postversion": "npm publish",
-    "postpublish": "git push --follow-tags"
+    "postversion": "npm run release",
+    "postpublish": "git push --follow-tags",
+    "release": "npm publish",
+    "postrelease": "npm run docs"
   },
   "repository": "git@github.com:dialogs/dialog-js-utils.git",
   "author": "Nikita Gusakov <gusnkt@gmail.com>",
@@ -22,6 +25,8 @@
   "devDependencies": {
     "@dlghq/babel-preset-dialog": "2.5.0",
     "@dlghq/eslint-config-dialog": "1.15.0",
+    "babel-core": "6.18.2",
+    "buildbranch": "1.0.0",
     "esdoc": "0.4.8",
     "esdoc-flow-plugin": "1.0.0",
     "eslint": "3.10.2",

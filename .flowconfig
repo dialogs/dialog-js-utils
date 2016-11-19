@@ -1,4 +1,6 @@
 [ignore]
+.*/docs/.*
+.*/__tests__/.*
 
 [include]
 
@@ -6,6 +8,5 @@
 lib/
 
 [options]
-module.system=haste
 module.use_strict=true
 esproposal.class_static_fields=enable
