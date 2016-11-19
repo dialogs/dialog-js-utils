@@ -1,9 +1,9 @@
-/**
+/*
  * Copyright 2016 Dialog LLC <info@dlg.im>
  * @flow
  */
 
-import calculateCursor from '../calculateCursor';
+import { calculateCursor } from '../calculateCursor';
 
 describe('calculateCursor', () => {
   const min = 0;

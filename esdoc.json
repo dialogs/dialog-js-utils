@@ -1,0 +1,12 @@
+{
+  "source": "./src",
+  "destination": "./docs",
+  "plugins": [
+    {
+      "name": "esdoc-flow-plugin"
+    },
+    {
+      "name": "./esdoc/import-plugin"
+    }
+  ]
+}

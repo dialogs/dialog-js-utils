@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright 2016 Dialog LLC <info@dlg.im>
  * @flow
  */
@@ -10,7 +10,7 @@ export type Filterable<T> = Array<T> | IndexedCollection<T>;
 /**
  * Filter any collection by query.
  */
-function filterByQuery<T, C: Filterable<T>>(query: string,
+export function filterByQuery<T, C: Filterable<T>>(query: string,
                                             items: C,
                                             getValue: (item: T) => string): C {
   const lowerQuery = query.toLowerCase();
@@ -20,5 +20,3 @@ function filterByQuery<T, C: Filterable<T>>(query: string,
     return value.indexOf(lowerQuery) !== -1;
   });
 }
-
-export default filterByQuery;

@@ -1,28 +1,28 @@
-/**
+/*
  * Copyright 2016 Dialog LLC <info@dlg.im>
  * @flow
  */
 
-/**
- * Calculates next cursor position based on options.
- *
- * @param {number} min Minimum cursor value
- * @param {number} max Maximum cursor value
- * @param {number} next Next expected cursor value
- * @param {boolean} looped Should be true if cursor is looped
- * @returns {number} Next actual cursor value
- */
-function calculateCursor({
-  min = 0,
-  max,
-  next,
-  looped = false
-}: {
+export type Options = {
   min?: number,
   max: number,
   next: number,
   looped?: boolean
-}): number {
+};
+
+/**
+ * Calculates next cursor position based on options.
+ *
+ * @param {Object} options - The options
+ * @param {number} [options.min] - Minimum cursor value
+ * @param {number} options.max - Maximum cursor value
+ * @param {number} options.next - Next expected cursor value
+ * @param {boolean} [options.looped] - Should be true if cursor is looped
+ *
+ * @returns {number} Next actual cursor value
+ */
+export function calculateCursor(options: Options): number {
+  const { min = 0, max, next, looped = false } = options;
   if (next < min) {
     return looped ? max : min;
   }
@@ -33,5 +33,3 @@ function calculateCursor({
 
   return next;
 }
-
-export default calculateCursor;

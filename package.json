@@ -10,6 +10,8 @@
   "scripts": {
     "pretest": "eslint src/ && flow check",
     "test": "jest",
+    "predocs": "rm -rf docs/",
+    "docs": "esdoc -c esdoc.json",
     "preversion": "npm test",
     "postversion": "npm publish",
     "postpublish": "git push --follow-tags"
@@ -20,6 +22,8 @@
   "devDependencies": {
     "@dlghq/babel-preset-dialog": "2.5.0",
     "@dlghq/eslint-config-dialog": "1.15.0",
+    "esdoc": "0.4.8",
+    "esdoc-flow-plugin": "1.0.0",
     "eslint": "3.10.2",
     "flow-bin": "0.35.0",
     "jest-cli": "17.0.3"

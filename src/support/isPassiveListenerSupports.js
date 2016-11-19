@@ -16,8 +16,11 @@ try {
   // do nothing
 }
 
-function isPassiveListenerSupports(): boolean {
+/**
+ * Checks if browser supports passive event listeners.
+ *
+ * @returns {boolean}
+ */
+export function isPassiveListenerSupports(): boolean {
   return isSupports;
 }
-
-export default isPassiveListenerSupports;

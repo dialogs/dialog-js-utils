@@ -1,9 +1,15 @@
-/**
+/*
  * Copyright 2016 Dialog LLC <info@dlg.im>
  * @flow
  */
 
-function selectFiles(callback: (files: File[]) => void, multiple?: boolean) {
+/**
+ * Open standard browser file-select window.
+ *
+ * @param {Function} callback
+ * @param {boolean} [multiple]
+ */
+export function selectFiles(callback: (files: File[]) => void, multiple?: boolean) {
   const input = document.createElement('input');
   input.type = 'file';
   input.multiple = Boolean(multiple);
@@ -14,5 +20,3 @@ function selectFiles(callback: (files: File[]) => void, multiple?: boolean) {
 
   input.click();
 }
-
-export default selectFiles;

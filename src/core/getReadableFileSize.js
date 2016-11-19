@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright 2016 Dialog LLC <info@dlg.im>
  * @flow
  */
@@ -9,7 +9,7 @@ const units = ['kB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
 /**
  * Convert bytes to human-readable string.
  */
-function getReadableFileSize(bytes: number): string {
+export function getReadableFileSize(bytes: number): string {
   if (bytes < thresh) {
     return bytes + ' B';
   }
@@ -25,5 +25,3 @@ function getReadableFileSize(bytes: number): string {
 
   return result.toFixed(1) + ' ' + units[exp - 1];
 }
-
-export default getReadableFileSize;

@@ -2,7 +2,12 @@
  * Copyright 2016 Dialog LLC <info@dlg.im>
  */
 
-function selectText(element: HTMLElement): void {
+/**
+ * Select text inside element.
+ *
+ * @param {Element} element
+ */
+export function selectText(element: HTMLElement): void {
   if (document.body.createTextRange) {
     const range = document.body.createTextRange();
     range.moveToElementText(element);
@@ -15,5 +20,3 @@ function selectText(element: HTMLElement): void {
     selection.addRange(range);
   }
 }
-
-export default selectText;
