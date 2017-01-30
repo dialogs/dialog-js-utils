@@ -23,15 +23,15 @@
   "author": "Nikita Gusakov <gusnkt@gmail.com>",
   "license": "Apache-2.0",
   "devDependencies": {
-    "@dlghq/babel-preset-dialog": "2.5.0",
-    "@dlghq/eslint-config-dialog": "1.15.0",
-    "babel-core": "6.18.2",
+    "@dlghq/babel-preset-dialog": "3.1.0",
+    "@dlghq/eslint-config-dialog": "1.21.0",
+    "babel-core": "6.22.1",
     "buildbranch": "1.0.0",
-    "esdoc": "0.4.8",
+    "esdoc": "0.5.2",
     "esdoc-flow-plugin": "1.0.0",
-    "eslint": "3.10.2",
-    "flow-bin": "0.35.0",
-    "jest-cli": "17.0.3"
+    "eslint": "3.14.1",
+    "flow-bin": "0.38.0",
+    "jest-cli": "18.1.0"
   },
   "dependencies": {
     "immutable": "3.8.1"
