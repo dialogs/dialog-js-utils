@@ -24,7 +24,7 @@
   "license": "Apache-2.0",
   "devDependencies": {
     "@dlghq/babel-preset-dialog": "3.1.0",
-    "@dlghq/eslint-config-dialog": "1.21.0",
+    "@dlghq/eslint-config-dialog": "1.21.1",
     "babel-core": "6.22.1",
     "buildbranch": "1.0.0",
     "esdoc": "0.5.2",

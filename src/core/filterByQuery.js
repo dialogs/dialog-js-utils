@@ -3,9 +3,9 @@
  * @flow
  */
 
-import type { IndexedCollection } from 'immutable';
+import type { IndexedIterable } from 'immutable';
 
-export type Filterable<T> = Array<T> | IndexedCollection<T>;
+export type Filterable<T> = Array<T> | IndexedIterable<T>;
 
 function normalize(text) {
   return text.toLowerCase()
@@ -22,8 +22,18 @@ export function filterByQuery<T, C: Filterable<T>>(
 ): C {
   const normalQuery = normalize(query);
 
-  return items.filter((item) => {
+  return items.map((item) => {
     const value = normalize(getValue(item));
-    return value.indexOf(normalQuery) !== -1;
-  });
+
+    return {
+      item,
+      score: value.indexOf(normalQuery)
+    };
+  }).filter(
+    ({ score }) => score !== -1
+  ).sort(
+    (a, b) => a.score - b.score
+  ).map(
+    ({ item }) => item
+  );
 }
