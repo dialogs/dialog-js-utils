@@ -9,7 +9,7 @@ export type Filterable<T> = Array<T> | IndexedIterable<T>;
 
 function normalize(text) {
   return text.toLowerCase()
-             .replace(/ё/g, 'е');
+    .replace(/ё/g, 'е');
 }
 
 /**

@@ -4,7 +4,16 @@
  */
 
 const thresh = 1024;
-const units = ['kB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
+const units = [
+  'kB',
+  'MB',
+  'GB',
+  'TB',
+  'PB',
+  'EB',
+  'ZB',
+  'YB'
+];
 
 /**
  * Convert bytes to human-readable string.
