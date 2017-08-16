@@ -8,6 +8,8 @@ try {
   const opts = Object.defineProperty({}, 'passive', {
     get() {
       isSupports = true;
+
+      return true;
     }
   });
 

@@ -5,7 +5,7 @@
 const { name } = require('../package.json');
 
 function onHandleTag(ev) {
-  for (let tag of ev.data.tag) {
+  for (const tag of ev.data.tag) {
     if (tag.importPath) {
       tag.importPath = name;
     }
