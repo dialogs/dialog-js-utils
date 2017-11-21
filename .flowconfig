@@ -1,6 +1,7 @@
 [ignore]
 .*/docs/.*
 .*/__tests__/.*
+.*/node_modules/immutable/.*\.flow
 
 [include]
 

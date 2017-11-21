@@ -3,6 +3,9 @@
  * @flow
  */
 
+import Field, { type FieldAction } from './redux/field';
+import type { EmptyAction } from './redux/action';
+
 /**
  * Core
  */
@@ -23,3 +26,9 @@ export { selectText } from './dom/selectText';
  * Support
  */
 export { isElectron } from './support/isElectron';
+
+/**
+ * Redux
+ */
+export { Field };
+export type { EmptyAction, FieldAction };
