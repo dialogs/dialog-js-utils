@@ -12,7 +12,7 @@
     "test": "jest",
     "predocs": "rm -rf docs/",
     "docs": "esdoc -c esdoc.json",
-    "postdocs": "buildbranch gh-pages docs",
+    "postdocs": "gh-pages-deploy",
     "preversion": "npm test",
     "postversion": "npm run release",
     "postpublish": "git push --follow-tags",
@@ -26,15 +26,18 @@
     "@dlghq/babel-preset-dialog": "3.4.2",
     "@dlghq/eslint-config-dialog": "3.3.1",
     "babel-core": "6.26.0",
-    "buildbranch": "2.0.0",
     "esdoc": "1.0.4",
     "esdoc-flow-plugin": "1.0.0",
     "eslint": "4.11.0",
     "flow-bin": "0.59.0",
+    "gh-pages-deploy": "^0.4.2",
     "jest-cli": "21.2.1"
   },
   "dependencies": {
     "esdoc-standard-plugin": "1.0.0",
     "immutable": "3.8.2"
+  },
+  "gh-pages-deploy": {
+    "staticpath": "docs"
   }
 }
