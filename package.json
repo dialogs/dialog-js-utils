@@ -3,14 +3,11 @@
   "version": "0.8.1",
   "description": "A collection of utility libraries used by Dialog projects.",
   "main": "src/index.js",
-  "files": [
-    "src",
-    "lib"
-  ],
+  "files": ["src", "lib"],
   "scripts": {
     "pretest": "eslint src/ && flow check",
     "test": "jest",
-    "predocs": "rm -rf docs/",
+    "predocs": "rimraf docs/",
     "docs": "esdoc -c esdoc.json",
     "postdocs": "gh-pages-deploy",
     "preversion": "npm test",
@@ -21,17 +18,25 @@
   },
   "repository": "git@github.com:dialogs/dialog-js-utils.git",
   "author": "Nikita Gusakov <gusnkt@gmail.com>",
+  "contributors": [
+    {
+      "name": "Oleg Shilov",
+      "email": "me@olegshilov.com",
+      "url": "https://github.com/olegshilov"
+    }
+  ],
   "license": "Apache-2.0",
   "devDependencies": {
     "@dlghq/babel-preset-dialog": "3.4.2",
-    "@dlghq/eslint-config-dialog": "3.3.1",
+    "@dlghq/eslint-config-dialog": "3.3.2",
     "babel-core": "6.26.0",
     "esdoc": "1.0.4",
     "esdoc-flow-plugin": "1.0.0",
-    "eslint": "4.11.0",
-    "flow-bin": "0.59.0",
+    "eslint": "4.17.0",
+    "flow-bin": "0.65.0",
     "gh-pages-deploy": "^0.4.2",
-    "jest-cli": "21.2.1"
+    "jest-cli": "22.2.1",
+    "rimraf": "2.6.2"
   },
   "dependencies": {
     "esdoc-standard-plugin": "1.0.0",
