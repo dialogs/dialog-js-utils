@@ -1,5 +1,5 @@
 /*
- * Copyright 2016 Dialog LLC <info@dlg.im>
+ * Copyright 2018 Dialog LLC <info@dlg.im>
  */
 
 import { calculateCursor } from '../calculateCursor';
