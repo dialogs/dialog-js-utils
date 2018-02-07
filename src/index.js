@@ -13,6 +13,8 @@ export { calculateCursor } from './core/calculateCursor';
 export { filterByQuery } from './core/filterByQuery';
 export { formatTime } from './core/formatTime';
 export { getReadableFileSize } from './core/getReadableFileSize';
+export { parseJSONSchema, safelyParseJSONSchema, safelyParseJSON } from './core/JSONSchema';
+export type { JSONSchemaProperty, JSONSchema, JSONValue } from './core/JSONSchema';
 
 /**
  * DOM

@@ -3,7 +3,10 @@
   "version": "0.8.1",
   "description": "A collection of utility libraries used by Dialog projects.",
   "main": "src/index.js",
-  "files": ["src", "lib"],
+  "files": [
+    "src",
+    "lib"
+  ],
   "scripts": {
     "pretest": "eslint src/ && flow check",
     "test": "jest",
@@ -40,7 +43,8 @@
   },
   "dependencies": {
     "esdoc-standard-plugin": "1.0.0",
-    "immutable": "3.8.2"
+    "immutable": "3.8.2",
+    "lodash": "4.17.5"
   },
   "gh-pages-deploy": {
     "staticpath": "docs"
