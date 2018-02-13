@@ -64,7 +64,7 @@ export function safelyParseJSONSchema(text: string, onError?: (error: Error) => 
   }
 }
 
-export function safelyParseJSON(text: string, onError?: (error: Error) => void): ?JSONSchema {
+export function safelyParseJSON(text: string, onError?: (error: Error) => void): ?JSONValue {
   try {
     return JSON.parse(text);
   } catch (e) {
