@@ -12,6 +12,7 @@ export type JSONSchemaProperty = {
 };
 
 export type JSONSchema = {
+  type: 'object',
   properties: {
     [name: string]: JSONSchemaProperty
   }
@@ -23,6 +24,7 @@ export type JSONValue = {
 
 export function parseJSONSchema(text: string): JSONSchema {
   const object = JSON.parse(text);
+
   if (!isPlainObject(object)) {
     throw new Error('Schema is not a plain object');
   }
@@ -32,6 +34,7 @@ export function parseJSONSchema(text: string): JSONSchema {
   }
 
   const properties = {};
+
   forIn(object.properties, (value: mixed, key: string) => {
     if (typeof value !== 'object' || !value) {
       throw new Error(`Schema property "${key}" is not a plain object`);
@@ -49,7 +52,10 @@ export function parseJSONSchema(text: string): JSONSchema {
     properties[key] = { type, title };
   });
 
-  return { properties };
+  return {
+    type: 'object',
+    properties
+  };
 }
 
 export function safelyParseJSONSchema(text: string, onError?: (error: Error) => void): ?JSONSchema {
