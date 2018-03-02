@@ -9,6 +9,7 @@ import type { EmptyAction } from './redux/action';
 /**
  * Core
  */
+export { mapNotNull } from './core/mapNotNull';
 export { calculateCursor } from './core/calculateCursor';
 export { filterByQuery } from './core/filterByQuery';
 export { formatTime } from './core/formatTime';
