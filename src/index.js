@@ -24,6 +24,7 @@ export { listen } from './dom/listen';
 export { fileToBase64 } from './dom/fileToBase64';
 export { selectFiles } from './dom/selectFiles';
 export { selectText } from './dom/selectText';
+export { hasSelection } from './dom/hasSelection';
 
 /**
  * Support
