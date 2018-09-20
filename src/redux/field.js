@@ -2,6 +2,7 @@
  * Copyright 2017 dialog LLC <info@dlg.im>
  * @flow
  */
+/* eslint-disable no-undef, no-use-before-define */
 
 export type FieldAction<Type: string, State, Context> = {
   type: Type,
@@ -84,8 +85,8 @@ class Field<State> {
   }
 
   flatMap<Result>(
-    mapper: (value: State, error: ?Error, pending: boolean) => Field<Result>
-  ): Field<Result> {
+    mapper: (value: State, error: ?Error, pending: boolean) => Result
+  ): Result {
     return mapper(this.value, this.error, this.pending);
   }
 
