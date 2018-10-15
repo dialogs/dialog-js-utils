@@ -3,8 +3,8 @@
  * @flow
  */
 
-import forIn from 'lodash/forIn';
-import isPlainObject from 'lodash/isPlainObject';
+import forIn from 'lodash-es/forIn';
+import isPlainObject from 'lodash-es/isPlainObject';
 
 export type JSONSchemaProperty = {
   type: 'string' | 'number' | 'integer' | 'boolean',
