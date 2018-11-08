@@ -35,14 +35,14 @@
     "babel-core": "6.26.3",
     "esdoc": "1.1.0",
     "esdoc-flow-plugin": "1.0.0",
-    "eslint": "5.6.0",
-    "flow-bin": "0.81.0",
+    "esdoc-standard-plugin": "1.0.0",
+    "eslint": "5.8.0",
+    "flow-bin": "0.85.0",
     "gh-pages-deploy": "^0.5.0",
     "jest-cli": "23.6.0",
     "rimraf": "2.6.2"
   },
   "dependencies": {
-    "esdoc-standard-plugin": "1.0.0",
     "immutable": "3.8.2",
     "lodash": "4.17.11"
   },
