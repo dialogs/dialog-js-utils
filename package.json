@@ -12,7 +12,7 @@
     "test": "jest",
     "predocs": "rimraf docs/",
     "docs": "esdoc -c esdoc.json",
-    "postdocs": "gh-pages-deploy",
+    "postdocs": "buildbranch gh-pages docs '' no-verify",
     "preversion": "npm test",
     "postversion": "npm run release",
     "postpublish": "git push --follow-tags",
@@ -36,20 +36,17 @@
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "23.6.0",
     "babel-preset-jest": "23.2.0",
+    "buildbranch": "2.0.1",
     "esdoc": "1.1.0",
     "esdoc-flow-type-plugin": "1.1.0",
     "esdoc-standard-plugin": "1.0.0",
     "eslint": "5.9.0",
     "flow-bin": "0.86.0",
-    "gh-pages-deploy": "^0.5.0",
     "jest-cli": "23.6.0",
     "rimraf": "2.6.2"
   },
   "dependencies": {
     "immutable": "3.8.2",
     "lodash": "4.17.11"
-  },
-  "gh-pages-deploy": {
-    "staticpath": "docs"
   }
 }
