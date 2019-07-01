@@ -7,3 +7,5 @@ yarn.lock
 
 # Build
 docs/
+
+flow-typed/npm

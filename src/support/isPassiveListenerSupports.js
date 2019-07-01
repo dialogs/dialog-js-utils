@@ -1,11 +1,13 @@
 /*
  * Copyright 2018 Dialog LLC <info@dlg.im>
+ * @flow strict
  */
 
 let isSupports = false;
 
 try {
-  const opts = Object.defineProperty({}, 'passive', {
+  // $FlowFixMe
+  const opts = Object.defineProperty({}, "passive", {
     get() {
       isSupports = true;
 
@@ -13,7 +15,7 @@ try {
     }
   });
 
-  window.addEventListener('test', null, opts);
+  window.addEventListener("test", null, opts);
 } catch (e) {
   // do nothing
 }

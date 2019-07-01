@@ -1,6 +1,6 @@
 /*
  * Copyright 2017 dialog LLC <info@dlg.im>
- * @flow
+ * @flow strict
  */
 /* eslint-disable no-undef, no-use-before-define */
 
@@ -16,7 +16,7 @@ type DispatchOptions<Type: string, State, Context> = {
   type: Type,
   action: Promise<State>,
   context: Context,
-  dispatch: (action: FieldAction<Type, State, Context>) => any,
+  dispatch: (action: FieldAction<Type, State, Context>) => void,
   initialState: State
 };
 
@@ -39,14 +39,14 @@ class Field<State> {
     });
 
     action.then(
-      (value) => {
+      value => {
         dispatch({
           type,
           payload: new Field(value, null, false),
           meta: { context }
         });
       },
-      (error) => {
+      error => {
         dispatch({
           type,
           payload: new Field(initialState, error, false),

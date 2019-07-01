@@ -1,5 +1,6 @@
 /*
  * Copyright 2018 Dialog LLC <info@dlg.im>
+ * @flow strict
  */
 
 /**
@@ -8,6 +9,7 @@
  * @param {Element} element
  */
 export function selectText(element: HTMLElement): void {
+  // $FlowFixMe
   if (document.body.createTextRange) {
     const range = document.body.createTextRange();
     range.moveToElementText(element);

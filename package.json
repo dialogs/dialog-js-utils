@@ -41,12 +41,12 @@
     "esdoc-flow-type-plugin": "1.1.0",
     "esdoc-standard-plugin": "1.0.0",
     "eslint": "5.9.0",
-    "flow-bin": "0.86.0",
+    "flow-bin": "0.102.0",
     "jest-cli": "23.6.0",
     "rimraf": "2.6.2"
   },
   "dependencies": {
-    "immutable": "3.8.2",
+    "immutable": "4.0.0-rc.12",
     "lodash": "4.17.11"
   }
 }

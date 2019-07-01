@@ -1,8 +1,9 @@
 /*
  * Copyright 2018 Dialog LLC <info@dlg.im>
+ * @flow strict
  */
 
-import { isPassiveListenerSupports } from '../support/isPassiveListenerSupports';
+import { isPassiveListenerSupports } from "../support/isPassiveListenerSupports";
 
 /**
  * Adds DOM event listener.
@@ -16,9 +17,19 @@ import { isPassiveListenerSupports } from '../support/isPassiveListenerSupports'
  * @param {boolean} [options.passive=false] - Indicating that the listener will never call `event.preventDefault()`.
  * @returns {Listener}
  */
-export function listen(target, eventType, listener, options) {
+export function listen(
+  target: HTMLElement,
+  eventType: string,
+  // $FlowFixMe
+  listener,
+  options: {
+    capture?: boolean,
+    passive?: boolean
+  }
+) {
   const { passive = false, capture = false } = options;
-  const opts = passive && isPassiveListenerSupports() ? { passive, capture } : capture;
+  const opts =
+    passive && isPassiveListenerSupports() ? { passive, capture } : capture;
 
   target.addEventListener(eventType, listener, opts);
 
