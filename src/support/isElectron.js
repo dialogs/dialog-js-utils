@@ -3,7 +3,7 @@
  * @flow strict
  */
 
-const _isElectron = typeof window.require === 'function';
+const _isElectron = typeof window.require === "function";
 
 /**
  * True if app running in Electron.

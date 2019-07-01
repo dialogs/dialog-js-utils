@@ -17,7 +17,8 @@
     "postversion": "npm run release",
     "postpublish": "git push --follow-tags",
     "release": "npm publish",
-    "postrelease": "npm run docs"
+    "postrelease": "npm run docs",
+    "fmt": "prettier '**/**/*.{js,json,css,md,html}' --write"
   },
   "repository": "git@github.com:dialogs/dialog-js-utils.git",
   "author": "Nikita Gusakov <gusnkt@gmail.com>",
@@ -41,12 +42,31 @@
     "esdoc-flow-type-plugin": "1.1.0",
     "esdoc-standard-plugin": "1.0.0",
     "eslint": "5.9.0",
+    "eslint-config-prettier": "6.0.0",
     "flow-bin": "0.102.0",
+    "husky": "2.7.0",
     "jest-cli": "23.6.0",
+    "lint-staged": "8.2.1",
+    "prettier": "1.18.2",
     "rimraf": "2.6.2"
   },
   "dependencies": {
     "immutable": "4.0.0-rc.12",
     "lodash": "4.17.11"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.--write": [
+      "prettier --write",
+      "git add"
+    ],
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
   }
 }

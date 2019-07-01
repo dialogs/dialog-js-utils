@@ -2,7 +2,7 @@
  * Copyright 2018 Dialog LLC <info@dlg.im>
  */
 
-const { name } = require('../package.json');
+const { name } = require("../package.json");
 
 function onHandleTag(ev) {
   for (const tag of ev.data.tag) {
