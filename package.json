@@ -31,8 +31,8 @@
   ],
   "license": "Apache-2.0",
   "devDependencies": {
-    "@babel/core": "7.1.6",
-    "@dlghq/babel-preset-dialog": "4.2.0",
+    "@babel/core": "7.5.4",
+    "@dlghq/babel-preset-dialog": "4.4.0",
     "@dlghq/eslint-config-dialog": "3.4.0",
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "23.6.0",
@@ -41,18 +41,18 @@
     "esdoc": "1.1.0",
     "esdoc-flow-type-plugin": "1.1.0",
     "esdoc-standard-plugin": "1.0.0",
-    "eslint": "5.9.0",
+    "eslint": "5.16.0",
     "eslint-config-prettier": "6.0.0",
     "flow-bin": "0.102.0",
     "husky": "2.7.0",
     "jest-cli": "23.6.0",
     "lint-staged": "8.2.1",
     "prettier": "1.18.2",
-    "rimraf": "2.6.2"
+    "rimraf": "2.6.3"
   },
   "dependencies": {
     "immutable": "4.0.0-rc.12",
-    "lodash": "4.17.11"
+    "lodash": "4.17.14"
   },
   "husky": {
     "hooks": {
