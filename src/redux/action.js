@@ -4,5 +4,5 @@
  */
 
 export type EmptyAction<Type: string> = {
-  type: Type
+  type: Type,
 };

@@ -7,15 +7,15 @@ let isSupports = false;
 
 try {
   // $FlowFixMe
-  const opts = Object.defineProperty({}, "passive", {
+  const opts = Object.defineProperty({}, 'passive', {
     get() {
       isSupports = true;
 
       return true;
-    }
+    },
   });
 
-  window.addEventListener("test", null, opts);
+  window.addEventListener('test', null, opts);
 } catch (e) {
   // do nothing
 }

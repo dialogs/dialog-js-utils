@@ -13,10 +13,10 @@
 export function selectFiles(
   callback: (files: File[]) => void,
   multiple?: boolean,
-  accept?: string
+  accept?: string,
 ) {
-  const input = document.createElement("input");
-  input.type = "file";
+  const input = document.createElement('input');
+  input.type = 'file';
   input.multiple = Boolean(multiple);
   if (accept) {
     input.accept = accept;

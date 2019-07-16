@@ -11,18 +11,18 @@ npm install --save @dlghq/dialog-utils
 ## Usage
 
 ```js
-import { isElectron } from "@dlghq/dialog-utils";
+import { isElectron } from '@dlghq/dialog-utils';
 
-console.log("isElectron: ", isElectron());
+console.log('isElectron: ', isElectron());
 ```
 
 ## Redux
 
 ```js
-import { Field } from "@dlghq/dialog-utils";
+import { Field } from '@dlghq/dialog-utils';
 
-Field.create({ value: "" })
-  .map(value => "foo")
+Field.create({ value: '' })
+  .map((value) => 'foo')
   .flatMap((value, error, pending) => new Field(value, error, true))
   .render((value, error, pending) => (
     <FieldView value={value} pending={pending} />
@@ -32,10 +32,10 @@ function addContact(uid: number) {
   return ({ dispatch, messenger }) => {
     Field.dispatch({
       dispatch,
-      type: "@@dialog/USER_CONTACT_ADD",
+      type: '@@dialog/USER_CONTACT_ADD',
       context: uid,
       action: messenger.contacts.add(uid),
-      initialState: null
+      initialState: null,
     });
   };
 }

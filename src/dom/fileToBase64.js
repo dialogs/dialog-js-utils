@@ -11,9 +11,9 @@
  */
 export function fileToBase64(
   file: Blob,
-  callback: (dataUri: string) => void
+  callback: (dataUri: string) => void,
 ): void {
   const reader = new FileReader();
-  reader.onload = event => callback(event.target.result);
+  reader.onload = (event) => callback(event.target.result);
   reader.readAsDataURL(file);
 }

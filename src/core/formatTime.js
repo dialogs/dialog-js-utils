@@ -4,7 +4,7 @@
  */
 
 function pad(num: number): string {
-  return num < 10 ? "0" + num : String(num);
+  return num < 10 ? '0' + num : String(num);
 }
 
 /**
@@ -14,5 +14,5 @@ export function formatTime(time: number): string {
   const minutes = Math.floor(time / 60);
   const seconds = time - minutes * 60;
 
-  return pad(minutes) + ":" + pad(seconds);
+  return pad(minutes) + ':' + pad(seconds);
 }

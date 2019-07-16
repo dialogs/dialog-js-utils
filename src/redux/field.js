@@ -8,8 +8,8 @@ export type FieldAction<Type: string, State, Context> = {
   type: Type,
   payload: Field<State>,
   meta: {
-    context: Context
-  }
+    context: Context,
+  },
 };
 
 type DispatchOptions<Type: string, State, Context> = {
@@ -17,7 +17,7 @@ type DispatchOptions<Type: string, State, Context> = {
   action: Promise<State>,
   context: Context,
   dispatch: (action: FieldAction<Type, State, Context>) => void,
-  initialState: State
+  initialState: State,
 };
 
 class Field<State> {
@@ -30,40 +30,40 @@ class Field<State> {
     action,
     context,
     dispatch,
-    initialState
+    initialState,
   }: DispatchOptions<Type, State, Context>): void {
     dispatch({
       type,
       payload: new Field(initialState, null, true),
-      meta: { context }
+      meta: { context },
     });
 
     action.then(
-      value => {
+      (value) => {
         dispatch({
           type,
           payload: new Field(value, null, false),
-          meta: { context }
+          meta: { context },
         });
       },
-      error => {
+      (error) => {
         dispatch({
           type,
           payload: new Field(initialState, error, false),
-          meta: { context }
+          meta: { context },
         });
-      }
+      },
     );
   }
 
   static create<Result>({
     value,
     error,
-    pending
+    pending,
   }: {
     value: Result,
     error?: ?Error,
-    pending?: boolean
+    pending?: boolean,
   }): Field<Result> {
     return new Field(value, error, pending);
   }
@@ -75,23 +75,23 @@ class Field<State> {
   }
 
   map<Result>(
-    mapper: (value: State, error: ?Error, pending: boolean) => Result
+    mapper: (value: State, error: ?Error, pending: boolean) => Result,
   ): Field<Result> {
     return new Field(
       mapper(this.value, this.error, this.pending),
       this.error,
-      this.pending
+      this.pending,
     );
   }
 
   flatMap<Result>(
-    mapper: (value: State, error: ?Error, pending: boolean) => Result
+    mapper: (value: State, error: ?Error, pending: boolean) => Result,
   ): Result {
     return mapper(this.value, this.error, this.pending);
   }
 
   render<Result>(
-    mapper: (value: State, error: ?Error, pending: boolean) => Result
+    mapper: (value: State, error: ?Error, pending: boolean) => Result,
   ): Result {
     return mapper(this.value, this.error, this.pending);
   }

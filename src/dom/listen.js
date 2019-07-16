@@ -3,14 +3,14 @@
  * @flow strict
  */
 
-import { isPassiveListenerSupports } from "../support/isPassiveListenerSupports";
+import { isPassiveListenerSupports } from '../support/isPassiveListenerSupports';
 
 type EventHandler = (event: Event) => mixed;
 type EventListener = { handleEvent: EventHandler } | EventHandler;
 
 type EventListenerOptionsOrUseCapture = {
   capture?: boolean,
-  passive?: boolean
+  passive?: boolean,
 };
 
 interface ListenFn {
@@ -18,9 +18,9 @@ interface ListenFn {
     target: EventTarget,
     type: string,
     listener: EventListener,
-    optionsOrUseCapture: EventListenerOptionsOrUseCapture
+    optionsOrUseCapture: EventListenerOptionsOrUseCapture,
   ): {
-    remove: () => mixed
+    remove: () => mixed,
   };
 }
 
@@ -40,7 +40,7 @@ export const listen: ListenFn = function listen(
   target,
   eventType,
   handler,
-  opts = { capture: false, passive: false }
+  opts = { capture: false, passive: false },
 ) {
   const options =
     opts.passive && isPassiveListenerSupports()
@@ -52,6 +52,6 @@ export const listen: ListenFn = function listen(
   return {
     remove() {
       target.removeEventListener(eventType, handler, options);
-    }
+    },
   };
 };

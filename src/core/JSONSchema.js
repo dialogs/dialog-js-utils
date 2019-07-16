@@ -3,54 +3,54 @@
  * @flow strict
  */
 
-import forIn from "lodash/forIn";
-import isPlainObject from "lodash/isPlainObject";
+import forIn from 'lodash/forIn';
+import isPlainObject from 'lodash/isPlainObject';
 
 export type JSONSchemaProperty = {
-  type: "string" | "number" | "integer" | "boolean",
-  title: string
+  type: 'string' | 'number' | 'integer' | 'boolean',
+  title: string,
 };
 
 export type JSONSchema = {
-  type: "object",
+  type: 'object',
   properties: {
-    [name: string]: JSONSchemaProperty
-  }
+    [name: string]: JSONSchemaProperty,
+  },
 };
 
 export type JSONValue = {
-  [key: string]: mixed
+  [key: string]: mixed,
 };
 
 export function parseJSONSchema(text: string): JSONSchema {
   const object = JSON.parse(text);
 
   if (!isPlainObject(object)) {
-    throw new Error("Schema is not a plain object");
+    throw new Error('Schema is not a plain object');
   }
 
   if (!isPlainObject(object.properties)) {
-    throw new Error("Schema properties is not a plain object");
+    throw new Error('Schema properties is not a plain object');
   }
 
   const properties = {};
 
   forIn(object.properties, (value: mixed, key: string) => {
-    if (typeof value !== "object" || !value) {
+    if (typeof value !== 'object' || !value) {
       throw new Error(`Schema property "${key}" is not a plain object`);
     }
 
     const { type, title } = value;
     if (
-      type !== "string" &&
-      type !== "number" &&
-      type !== "integer" &&
-      type !== "boolean"
+      type !== 'string' &&
+      type !== 'number' &&
+      type !== 'integer' &&
+      type !== 'boolean'
     ) {
       throw new Error(`Schema property "${key}" has unsupported type`);
     }
 
-    if (typeof title !== "string") {
+    if (typeof title !== 'string') {
       throw new Error(`Schema property "${key}" title is not a string"`);
     }
 
@@ -58,14 +58,14 @@ export function parseJSONSchema(text: string): JSONSchema {
   });
 
   return {
-    type: "object",
-    properties
+    type: 'object',
+    properties,
   };
 }
 
 export function safelyParseJSONSchema(
   text: string,
-  onError?: (error: Error) => void
+  onError?: (error: Error) => void,
 ): ?JSONSchema {
   try {
     return parseJSONSchema(text);
@@ -80,7 +80,7 @@ export function safelyParseJSONSchema(
 
 export function safelyParseJSON(
   text: string,
-  onError?: (error: Error) => void
+  onError?: (error: Error) => void,
 ): ?JSONValue {
   try {
     return JSON.parse(text);

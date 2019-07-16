@@ -3,12 +3,12 @@
  * @flow strict
  */
 
-import type { List } from "immutable";
+import type { List } from 'immutable';
 
 export type Filterable<T> = Array<T> | List<T>;
 
 function normalize(text) {
-  return text.toLowerCase().replace(/ё/g, "е");
+  return text.toLowerCase().replace(/ё/g, 'е');
 }
 
 /**
@@ -17,17 +17,17 @@ function normalize(text) {
 export function filterByQuery<T, C: Filterable<T>>(
   query: string,
   items: C,
-  getValue: (item: T) => string
+  getValue: (item: T) => string,
 ): C {
   const normalQuery = normalize(query);
 
   return items
-    .map(item => {
+    .map((item) => {
       const value = normalize(getValue(item));
 
       return {
         item,
-        score: value.indexOf(normalQuery)
+        score: value.indexOf(normalQuery),
       };
     })
     .filter(({ score }) => score !== -1)

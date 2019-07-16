@@ -2,13 +2,13 @@
  * Copyright 2018 Dialog LLC <info@dlg.im>
  */
 
-import { calculateCursor } from "../calculateCursor";
+import { calculateCursor } from '../calculateCursor';
 
-describe("calculateCursor", () => {
+describe('calculateCursor', () => {
   const min = 0;
   const max = 2;
 
-  it("should correctly calculate cursor", () => {
+  it('should correctly calculate cursor', () => {
     expect(calculateCursor({ min, max, next: min - 1 })).toBe(min);
     expect(calculateCursor({ min, max, next: min })).toBe(min);
     expect(calculateCursor({ min, max, next: 1 })).toBe(1);
@@ -16,7 +16,7 @@ describe("calculateCursor", () => {
     expect(calculateCursor({ min, max, next: max + 1 })).toBe(max);
   });
 
-  it("should correctly calculate looped cursor", () => {
+  it('should correctly calculate looped cursor', () => {
     const looped = true;
     expect(calculateCursor({ min, max, looped, next: min - 1 })).toBe(max);
     expect(calculateCursor({ min, max, looped, next: min })).toBe(min);

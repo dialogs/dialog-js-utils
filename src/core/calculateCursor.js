@@ -7,7 +7,7 @@ export type Options = {
   min?: number,
   max: number,
   next: number,
-  looped?: boolean
+  looped?: boolean,
 };
 
 /**
