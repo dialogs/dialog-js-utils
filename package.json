@@ -35,7 +35,7 @@
     "@dlghq/babel-preset-dialog": "4.4.0",
     "@dlghq/eslint-config-dialog": "3.4.0",
     "babel-core": "7.0.0-bridge.0",
-    "babel-jest": "23.6.0",
+    "babel-jest": "24.8.0",
     "babel-preset-jest": "23.2.0",
     "buildbranch": "2.0.1",
     "esdoc": "1.1.0",
@@ -45,7 +45,7 @@
     "eslint-config-prettier": "6.0.0",
     "flow-bin": "0.102.0",
     "husky": "2.7.0",
-    "jest-cli": "23.6.0",
+    "jest-cli": "24.8.0",
     "lint-staged": "8.2.1",
     "prettier": "1.18.2",
     "rimraf": "2.6.3"

@@ -1,6 +1,6 @@
 /*
  * Copyright 2017 dialog LLC <info@dlg.im>
- * @flow strict
+ * @flow
  */
 
 import forIn from 'lodash/forIn';
