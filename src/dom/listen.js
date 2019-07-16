@@ -5,6 +5,25 @@
 
 import { isPassiveListenerSupports } from "../support/isPassiveListenerSupports";
 
+type EventHandler = (event: Event) => mixed;
+type EventListener = { handleEvent: EventHandler } | EventHandler;
+
+type EventListenerOptionsOrUseCapture = {
+  capture?: boolean,
+  passive?: boolean
+};
+
+interface ListenFn {
+  (
+    target: EventTarget,
+    type: string,
+    listener: EventListener,
+    optionsOrUseCapture: EventListenerOptionsOrUseCapture
+  ): {
+    remove: () => mixed
+  };
+}
+
 /**
  * Adds DOM event listener.
  *
@@ -17,25 +36,22 @@ import { isPassiveListenerSupports } from "../support/isPassiveListenerSupports"
  * @param {boolean} [options.passive=false] - Indicating that the listener will never call `event.preventDefault()`.
  * @returns {Listener}
  */
-export function listen(
-  target: HTMLElement,
-  eventType: string,
-  // $FlowFixMe
-  listener,
-  options: {
-    capture?: boolean,
-    passive?: boolean
-  }
+export const listen: ListenFn = function listen(
+  target,
+  eventType,
+  handler,
+  opts = { capture: false, passive: false }
 ) {
-  const { passive = false, capture = false } = options;
-  const opts =
-    passive && isPassiveListenerSupports() ? { passive, capture } : capture;
+  const options =
+    opts.passive && isPassiveListenerSupports()
+      ? { passive: opts.passive, capture: opts.capture }
+      : opts.capture;
 
-  target.addEventListener(eventType, listener, opts);
+  target.addEventListener(eventType, handler, options);
 
   return {
     remove() {
-      target.removeEventListener(eventType, listener, opts);
+      target.removeEventListener(eventType, handler, options);
     }
   };
-}
+};
