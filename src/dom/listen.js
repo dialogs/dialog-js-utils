@@ -2,7 +2,7 @@
  * Copyright 2018 Dialog LLC <info@dlg.im>
  */
 
-import { isPassiveListenerSupports } from './isPassiveListenerSupports';
+import { isPassiveListenerSupports } from '../support/isPassiveListenerSupports';
 
 export const listen = function listen(
   target,

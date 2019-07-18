@@ -1,6 +1,6 @@
 /*
  * Copyright 2018 Dialog LLC <info@dlg.im>
- * @flow strict
+ * @flow
  */
 
 import Field, { type FieldAction } from './redux/field';
