@@ -14,6 +14,11 @@ export function fileToBase64(
   callback: (dataUri: string) => void,
 ): void {
   const reader = new FileReader();
-  reader.onload = (event) => callback(event.target.result);
+
+  reader.onload = (event) => {
+    if (event.target instanceof FileReader && typeof event.target.result === 'string') {
+      callback(event.target.result);
+    }
+  };
   reader.readAsDataURL(file);
 }
