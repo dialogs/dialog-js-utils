@@ -2,6 +2,7 @@
  * Copyright 2017 dialog LLC <info@dlg.im>
  * @flow strict
  */
+
 /* eslint-disable no-undef, no-use-before-define */
 
 export type FieldAction<Type: string, State, Context> = {

@@ -15,6 +15,7 @@ export type JSONSchema = {
   type: 'object',
   properties: {
     [name: string]: JSONSchemaProperty,
+    ...,
   },
 };
 

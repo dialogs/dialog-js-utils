@@ -12,6 +12,8 @@ lib/
 module.use_strict=true
 esproposal.class_static_fields=enable
 
+exact_by_default=true
+
 [strict]
 unclear-type
 unsafe-getters-setters

@@ -9,3 +9,5 @@ yarn.lock
 docs/
 
 flow-typed/npm
+
+.vscode/settings.json
