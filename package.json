@@ -1,6 +1,6 @@
 {
   "name": "@dlghq/dialog-utils",
-  "version": "0.10.7",
+  "version": "0.10.8",
   "description": "A collection of utility libraries used by Dialog projects.",
   "main": "src/index.js",
   "files": [
