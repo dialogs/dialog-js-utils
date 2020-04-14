@@ -43,7 +43,7 @@
     "esdoc-standard-plugin": "1.0.0",
     "eslint": "6.2.2",
     "eslint-config-prettier": "6.0.0",
-    "flow-bin": "0.106.2",
+    "flow-bin": "0.122.0",
     "husky": "2.7.0",
     "jest-cli": "24.8.0",
     "lint-staged": "8.2.1",

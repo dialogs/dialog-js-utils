@@ -11,6 +11,7 @@
 export function selectText(element: HTMLElement): void {
   // $FlowFixMe
   if (document.body.createTextRange) {
+    // $FlowFixMe: IE fix
     const range = document.body.createTextRange();
     range.moveToElementText(element);
     range.select();
